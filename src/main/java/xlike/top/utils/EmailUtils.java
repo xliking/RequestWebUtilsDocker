@@ -22,9 +22,9 @@ public class EmailUtils {
     // 邮件服务器配置常量（基于你的 application.yml）
     private static final String SMTP_HOST = System.getProperty("mail.smtp.host", "smtp.qiye.aliyun.com");
     private static final String SMTP_PORT = System.getProperty("mail.smtp.port", "465");
-    private static final String USERNAME = System.getProperty("mail.username", "linux@xlike.email");
-    private static final String PASSWORD = System.getProperty("mail.password", "1jGbVKez74jrQ5W1");
-    private static final String FROM_EMAIL = System.getProperty("mail.from", "linux@xlike.email");
+    private static final String USERNAME = System.getProperty("mail.username", "替换为自己的邮箱");
+    private static final String PASSWORD = System.getProperty("mail.password", "替换为自己的邮箱密码");
+    private static final String FROM_EMAIL = System.getProperty("mail.from", "替换为自己的邮箱");
     private static final String SMTP_AUTH = System.getProperty("mail.smtp.auth", "true");
     private static final String PROTOCOL = System.getProperty("mail.protocol", "smtp");
     private static final String DEFAULT_ENCODING = System.getProperty("mail.default-encoding", "UTF-8");
@@ -243,19 +243,4 @@ public class EmailUtils {
         }
     }
 
-    /**
-     * 测试方法
-     */
-    public static void main(String[] args) {
-        String jsonString = "{\"name\": \"John\", \"age\": 30, \"isStudent\": false, \"address\": {\"city\": \"New York\", \"zip\": null}}";
-        try {
-            sendJsonHtmlEmail(
-                    "2190418744@qq.com",
-                    "测试邮件",
-                    jsonString
-            );
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 }

@@ -3,6 +3,16 @@
 
 #  项目文档
 
+```text
+Docker启动命令
+docker run -d -p 9991:9991 -e SERVER_PORT=9991 -e REDIS_HOST=你的RedisIP -e REDIS_PORT=你的Redis端口 -e REDIS_PASSWORD=你的Redis密码 -e IS_AUTH=true -e AUTH=页面访问密码 --name online-request xlike0616/online-request:latest
+
+- IS_AUTH 是否开启访问密码，默认true
+- AUTH 页面访问密码，默认123456 （同时也是管理员账号）
+（如果 IS_AUTH 是 false，那么所有的人，都可以添加-管理员可以删除添加的任务）
+
+```
+
 ## 项目背景
 
 此项目 是一个基于 Spring Boot 的定时任务调度系统，旨在通过 HTTP 请求执行用户定义的任务，并将任务配置和结果持久化存储在 Redis 中。项目支持生成 Windows CMD 风格的 `curl` 命令，允许用户灵活配置请求参数。此外，系统包含定时清理机制，确保数据不过度积累。
